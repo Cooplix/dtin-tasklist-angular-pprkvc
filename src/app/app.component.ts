@@ -1,3 +1,4 @@
+import { style } from '@angular/animations';
 import { Component } from '@angular/core';
 import { Task } from './task';
 
@@ -6,7 +7,13 @@ import { Task } from './task';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
+
+
 export class AppComponent {
+
+isRed = false;
+
   title = 'App';
 
   tasks: Task[] = [];

@@ -1,13 +1,17 @@
+import { style } from '@angular/animations';
 import { Input, Output, EventEmitter, Component, OnInit } from '@angular/core';
 import { Task } from '../task';
+
 
 @Component({
   selector: 'app-task-list',
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.css']
 })
+
 export class TaskListComponent implements OnInit {
 
+ 
   constructor() { }
 
   ngOnInit() {
@@ -20,6 +24,12 @@ export class TaskListComponent implements OnInit {
   remove = new EventEmitter<number>();
 
   removeTask(taskIdx: number) {
-    this.remove.emit(taskIdx);
+    if(window.confirm('Are sure you want to delete this item ?')) {
+        this.remove.emit(taskIdx);
+    }
+  }
+
+  doneTask(taskIdx: number) {
+    
   }
 }
