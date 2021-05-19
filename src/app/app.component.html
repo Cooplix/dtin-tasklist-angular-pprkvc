@@ -1,17 +1,21 @@
 <mat-toolbar color="primary" class="mat-elevation-z4">
-    <span>{{title}}</span>
+  <span>{{title}}</span>
 </mat-toolbar>
 <div style="padding: 10px;">
-    <mat-form-field>
-        <input (keydown.enter)="handleTaskAdd(newTask.value);newTask.value=''" #newTask matInput placeholder="Nowe zadanie">
-    </mat-form-field>
-    <button mat-button color="accent"
-        (click)="handleTaskAdd(newTask.value);newTask.value=''"
-        [disabled]="!newTask.value">
-        DODAJ
-    </button>
+  <mat-form-field>
+    <input
+      (keydown.enter)="handleTaskAdd(newTask.value);newTask.value=''"
+      #newTask
+      matInput
+      placeholder="Nowe zadanie"
+    />
+  </mat-form-field>
+  <button mat-button color="accent" (click)="handleTaskAdd(newTask.value);newTask.value=''" [disabled]="!newTask.value"> 
+    DODAJ
+  </button>
 </div>
+
 <app-task-list
-    [tasks]="tasks"
-    (remove)="handleTaskRemove($event)"
+  [tasks]="tasks"
+  (remove)="handleTaskRemove($event)"
 ></app-task-list>

@@ -24,12 +24,16 @@ export class TaskListComponent implements OnInit {
   remove = new EventEmitter<number>();
 
   removeTask(taskIdx: number) {
-    if(window.confirm('Are sure you want to delete this item ?')) {
+    if(window.confirm('Are sure you want to delete this item?')) {
         this.remove.emit(taskIdx);
     }
   }
 
   doneTask(taskIdx: number) {
-    
-  }
+    this.tasks.forEach(task => {
+        if(task.id == taskIdx) task.completed = true;
+    })   
+}
+
+
 }
