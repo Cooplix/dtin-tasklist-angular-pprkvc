@@ -6,19 +6,24 @@ import { Task } from './task';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-
 export class AppComponent {
   title = 'App';
 
   tasks: Task[] = [];
-  
+
+onKeydown(event) {
+  if (event.key === "Enter") {
+    console.log(event);
+  }
+}
+
   handleTaskAdd(description: string) {
     if (description && description.length > 0) {
-        this.tasks.push({ description });
+      this.tasks.push({ description });
     }
   }
 
   handleTaskRemove(taskIdx: number) {
-      this.tasks.splice(taskIdx, 1);
+    this.tasks.splice(taskIdx, 1);
   }
 }
