@@ -4,6 +4,7 @@
     <button mat-button color="warn" (click)="removeTask(taskIdx)">
       USUŃ
     </button>
+    
     <mat-list-item *ngFor="let task of tasks; let taskIdx = index">
       <span mat-line ng-class="{checked:task.completed}">{{task.description}}</span>
       <button mat-button color="warn" (click)="doneTask(task.id)">
