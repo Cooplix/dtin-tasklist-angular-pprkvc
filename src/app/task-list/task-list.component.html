@@ -5,8 +5,8 @@
             USUŃ
         </button>
         <label ng-repeat="let task of tasks">
-        <span ng-class="{checked:task.completed}">{{task.name}}</span>
-        <button mat-button color="warn" (click)="doneTask(task.id)">DONE</button>
+        <span ng-class="{checked:task.completed}">{{task.description}}</span>
+        <input type ="button" ng-model="task.completed" mat-button color="warn" (click)="doneTask(task.id)">DONE</button>
         </label>
     </mat-list-item>
 </mat-nav-list>
