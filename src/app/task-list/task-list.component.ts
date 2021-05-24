@@ -25,8 +25,11 @@ export class TaskListComponent implements OnInit {
   }
 
   doneTask(taskIdx: number) {
-    this.tasks.forEach(task => {
-        if(task.id == taskIdx) task.completed = true;
-    })    
+    if(this.tasks[taskIdx].completed === true){
+      this.tasks[taskIdx].completed = false;  
+    } else {
+      this.tasks[taskIdx].completed = true;  
+    }
+      
   }
 }

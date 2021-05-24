@@ -1,15 +1,9 @@
 <mat-nav-list>
-  <mat-list-item *ngFor="let task of tasks; let taskIdx = index">
-    <span mat-line>{{task.description}}</span>
-    <button mat-button color="warn" (click)="removeTask(taskIdx)">
-      USUŃ
-    </button>
-    
     <mat-list-item *ngFor="let task of tasks; let taskIdx = index">
-      <span mat-line ng-class="{checked:task.completed}">{{task.description}}</span>
-      <button mat-button color="warn" (click)="doneTask(task.id)">
-        DONE
+        <span mat-line [ngClass]="{checked:task.completed}">{{task.description}}</span>
+        <button mat-button color="warn" (click)="removeTask(taskIdx)">
+            DELETE
         </button>
+        <button mat-button color="warn" (click)="doneTask(taskIdx)">DONE</button>
     </mat-list-item>
-  </mat-list-item>
 </mat-nav-list>
